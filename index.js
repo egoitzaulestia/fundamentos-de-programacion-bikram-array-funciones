@@ -1,23 +1,28 @@
-// Pair Programming
+//////////////////////////
+//// Pair Programming ////
+//////////////////////////
 
-// Arrays
+
+////////////
+// Arrays //
+////////////
 
 // 1.- Crea una variable de nombre 'arrayVacio' cuyo valor sea un array vacio
 
-let arrayVacio = []
+const arrayVacio = []
 
 
 // 2.- Crea una variable de nombre 'arrayNumeros' cuyo valor sea el array de numeros del 0 al 9 incluidos (0, 1, 2...)
 
-let arrayNumeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+const arrayNumeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
 // 3.- Crea una variable de nombre 'arrayNumerosPares' cuyo valor sea el array de numeros pares del 0 al 9 (considerando al 0 par)
 
-let arrayNumerosPares = []
+const arrayNumerosPares = []
 
 for (let i = 0; i < arrayNumeros.length; i++) {
-    if (i % 2 === 0) {
+    if ((i % 2) === 0) {
         arrayNumerosPares.push(i)
     }
 }
@@ -25,11 +30,13 @@ for (let i = 0; i < arrayNumeros.length; i++) {
 
 // 4.- Crea una variable de nombre 'arrayBidimensional' cuyo valor sea el siguiente array [[0, 1, 2], ['a', 'b', 'c']]
 
-let arrayBidimensional = [[0, 1, 2], ['a', 'b', 'c']]
+const arrayBidimensional = [[0, 1, 2], ['a', 'b', 'c']]
 
 
 
-// Funciones
+///////////////
+// Funciones //
+///////////////
 
 // 5.- Crea la función 'suma' que acepte como argumentos dos números y devuelva como resultado su suma
 // suma(51, 27)
@@ -38,9 +45,15 @@ let arrayBidimensional = [[0, 1, 2], ['a', 'b', 'c']]
 // suma(29, 2)
 // suma(147, 70)
 
-function suma (a, b) {
-    return a+b
+function suma(a, b) {
+    if (typeof a !== "number" || typeof b !== "number") {
+        return "Error! Tienes que introducir un número de verdad";
+    }  
+
+    return a + b
 }
+
+console.log(suma(1, 2))
 
 
 // 6.- Crea la función 'potenciacion' que acepte como argumentos dos números y devuelva 
@@ -52,7 +65,11 @@ function suma (a, b) {
 // potenciacion(10, 3)
 
 function potenciacion(a, b) {
-    return a**b
+    if (typeof a !== "number" || typeof b !== "number") {
+        return "Error! Tienes que introducir un número de verdad";
+    }  
+
+    return a ** b
 }
 
 
@@ -83,11 +100,20 @@ function repetirString(text, num) {
 // El número 1273 no es primo
 
 function esPrimo(num) {
+    if (!Number.isInteger(num)) {
+        return "Error! Tienes que introducir un número entero";
+    }
+
+    if (num <= 1) {
+        return false; // 0 and 1 are not prime
+    }
+
     for (let i = 2; i < num; i++) {
         if (num % i === 0) {
             return false
         }
     }
+
     return true
 }
 
@@ -116,7 +142,7 @@ function ordenarArray(arrNum) {
 // Pares en [0, 10, 9, 0]
 
 function obtenerPares(arrNum) {
-    let arrNumPar = []
+    const arrNumPar = []
     for (let i = 0; i < arrNum.length; i++) {
         if ((arrNum[i] % 2) === 0) {
             arrNumPar.push(arrNum[i])
@@ -163,21 +189,81 @@ function arrayMapi(arrNum, func) {
 // Eliminar duplicados de [91, 1, 156, 91, 98, 1, 156, 91, 98, 1, 98, 156]
 
 function eliminarDuplicados(arr) {
-    let result = []
+    const result = []
+
     for (let i = 0; i < arr.length; i++) {
         if (!result.includes(arr[i])) {
             result.push(arr[i])
         }
     }
+
     return result
 } 
 
-function eliminarDuplicados(arr) {
+function eliminarDuplicados2(arr) {
+    const unique = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (unique.indexOf(arr[i]) === -1) {
+            unique.push(arr[i]);
+        }
+    }
+
+    return unique;
+}
+
+function eliminarDuplicadosAdvance(arr) {
     return arr.filter((item, index) => arr.indexOf(item) === index)
 }
 
 
-// Mezclando Arrays y Funciones
+
+//////////////////
+//// proyecto ////
+//////////////////
+
+////////////
+// Arrays //
+////////////
+
+// 15.- Crea una variable de nombre 'arrayNumerosNeg' cuyo valor sea el array de numeros del 0 al -9 incluidos (0, -1, -2...)
+
+const arrayNumerosNeg = [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
+
+
+// 16.- Crea una variable de nombre 'holaMundo' cuyo valor sea un array con las palabras 'Hola' y 'Mundo'
+
+const holaMundo = ["Hola", "Mundo"]
+
+
+// 17.- Crea una variable de nombre 'loGuardoTodo' cuyo valor sea un array con los valores 'hola', 'que', 23, 42.33 y 'tal'
+
+const loGuardoTodo = ["hola", "que", 23, 42.33, "tal"]
+
+
+// 18.- Crea una variable de nombre 'arrayDeArrays' cuyo valor sea el siguiente array [[756, 'nombre'], [225, 'apellido'], [298, 'direccion']]
+
+const arrayDeArrays = [[756, 'nombre'], [225, 'apellido'], [298, 'direccion']]
+
+
+
+///////////////
+// Funciones //
+///////////////
+
+// 19.- Crea la función 'multiplicacion' que acepte como argumentos dos números y devuelva como resultado su multiplicacion
+// multiplicacion(45, 164)
+// multiplicacion(42, 19)
+// multiplicacion(47, 132)
+// multiplicacion(175, 140)
+// multiplicacion(151, 115)
+
+
+
+
+//////////////////////////////////
+// Mezclando Arrays y Funciones //
+//////////////////////////////////
 
 // 23.- Crea la función 'ordenarArray2' que acepte como argumento un array de números y devuelva un array ordenado de mayor a menor
 // Ordenar [162]
@@ -200,11 +286,13 @@ function ordenarArray2(arrNum) {
 
 function obtenerImpares(arrNum) {
     arrNumImpar = []
+
     for (let i = 0; i < arrNum.length; i++) {
         if ((arrNum[i] % 2) !== 0) {
             arrNumImpar.push(arrNum[i])
         }
     }
+
     return arrNumImpar
 }
 
@@ -219,13 +307,13 @@ function obtenerImpares(arrNum) {
 
 function sumarArray(arrNum) {
     let result = 0
+
     for (let i = 0; i < arrNum.length; i++) {
         result += arrNum[i]
     }
+
     return result
 }
-
-
 
 
 // 26.- Crear la función 'multiplicarArray' que acepte como argumento un array numérico y devuelva
@@ -239,9 +327,10 @@ function sumarArray(arrNum) {
 
 function multiplicarArray(arrNum) {
     let result = 1
+
     for (let i = 0; i < arrNum.length; i++) {
-        // result = result * arrNum[i]
         result *= arrNum[i]
     }
+
     return result
 }
