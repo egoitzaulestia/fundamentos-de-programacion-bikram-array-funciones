@@ -1,8 +1,20 @@
-let arrayVacio = [];
+// Pair Programming
 
-let arrayNumeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+// Arrays
 
-let arrayNumerosPares = [];
+// 1.- Crea una variable de nombre 'arrayVacio' cuyo valor sea un array vacio
+
+let arrayVacio = []
+
+
+// 2.- Crea una variable de nombre 'arrayNumeros' cuyo valor sea el array de numeros del 0 al 9 incluidos (0, 1, 2...)
+
+let arrayNumeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+// 3.- Crea una variable de nombre 'arrayNumerosPares' cuyo valor sea el array de numeros pares del 0 al 9 (considerando al 0 par)
+
+let arrayNumerosPares = []
 
 for (let i = 0; i < arrayNumeros.length; i++) {
     if (i % 2 === 0) {
@@ -10,28 +22,65 @@ for (let i = 0; i < arrayNumeros.length; i++) {
     }
 }
 
+
+// 4.- Crea una variable de nombre 'arrayBidimensional' cuyo valor sea el siguiente array [[0, 1, 2], ['a', 'b', 'c']]
+
 let arrayBidimensional = [[0, 1, 2], ['a', 'b', 'c']]
+
+
+
+// Funciones
+
+// 5.- Crea la función 'suma' que acepte como argumentos dos números y devuelva como resultado su suma
+// suma(51, 27)
+// suma(2, 5)
+// suma(38, 78)
+// suma(29, 2)
+// suma(147, 70)
 
 function suma (a, b) {
     return a+b
 }
 
+
+// 6.- Crea la función 'potenciacion' que acepte como argumentos dos números y devuelva 
+// como resultado el primer número (a) elevado al segundo(b) a^b [Prohibido operador ** y math.exp]
+// potenciacion(22, 0)
+// potenciacion(5, 0)
+// potenciacion(36, 8)
+// potenciacion(33, 0)
+// potenciacion(10, 3)
+
 function potenciacion(a, b) {
     return a**b
 }
+
+
+// 7.- Crea la función 'separarPalabras' que acepte como argumento un string y devuelva un array de palabras
+// Hola que tal?
+// The Bridge for life
+// A ver como separas esto
 
 function separarPalabras(text) {
     return text.split(" ")
 
 }
 
-// let text = "hello world DUBAI"
-// console.log(separarPalabras(text))
+
+// 8.- Crea la función 'repetirString' que acepta como argumento un string y un número, y retorna el primer string concatenado el número dado de veces
+// convertir ja en jajajajajajajaja
+// escribir estoy castigado 10 veces
 
 function repetirString(text, num) {
     return text.repeat(num)
 }
 
+
+// 9.- Crea la función 'esPrimo' que acepte como argumento un número y devuelva true si es primo y false si no lo es
+// El número 1871 es primo
+// El número 491 es primo
+// El número 1175 no es primo
+// El número 1273 no es primo
 
 function esPrimo(num) {
     for (let i = 2; i < num; i++) {
@@ -42,6 +91,9 @@ function esPrimo(num) {
     return true
 }
 
+//////////////////////////////////
+// Mezclando Arrays y Funciones //
+//////////////////////////////////
 
 // 10.- Crea la función 'ordenarArray' que acepte como argumento un array de números y devuelva 
 // un array ordenado de menor a mayor
