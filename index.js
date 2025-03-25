@@ -66,7 +66,7 @@ function ordenarArray(arrNum) {
 function obtenerPares(arrNum) {
     let arrNumPar = []
     for (let i = 0; i < arrNum.length; i++) {
-        if (arrNum[i] % 2 === 0) {
+        if ((arrNum[i] % 2) === 0) {
             arrNumPar.push(arrNum[i])
         }
     }
@@ -126,9 +126,70 @@ function eliminarDuplicados(arr) {
 
 
 // Mezclando Arrays y Funciones
+
 // 23.- Crea la función 'ordenarArray2' que acepte como argumento un array de números y devuelva un array ordenado de mayor a menor
 // Ordenar [162]
 // Ordenar [189]
 // Ordenar [60, 57, 58, 58, 60, 61, 61, 57]
 // Ordenar [199, 164, 194, 163, 276, 163, 274, 185, 160, 157]
 // Ordenar [196, 166, 138]
+
+function ordenarArray2(arrNum) { 
+    return arrNum.sort().reverse()
+}
+
+
+// 24.- Crea la función 'obtenerImpares' que acepte como argumento un array de números y devuelva un array con los elementos que sean impares
+// Imares en [1, 6, 12, 14, 7, 15, 17, 6]
+// Imares en [82, 30, 43, 84, 19]
+// Imares en [26, 91, 68, 25, 71, 92, 55, 25, 48]
+// Imares en [30, 56, 78, 52, 16]
+// Imares en [80, 44, 9, 69] 
+
+function obtenerImpares(arrNum) {
+    arrNumImpar = []
+    for (let i = 0; i < arrNum.length; i++) {
+        if ((arrNum[i] % 2) !== 0) {
+            arrNumImpar.push(arrNum[i])
+        }
+    }
+    return arrNumImpar
+}
+
+
+// 25.- Crear la función 'sumarArray' que acepte como argumento un array numérico y devuelva el resultado de la suma de los elementos
+// Sumar array [109, 66, 46, 72]
+// Sumar array [62, 49, 45]
+// Sumar array [64, 110, 84]
+// Sumar array [15, 37, 16, 29, 26]
+// Sumar array [3, 9, 27, 35, 31]
+// Sumar array [58, 63, 100, 154, 41, 4, 159, 42, 162]
+
+function sumarArray(arrNum) {
+    let result = 0
+    for (let i = 0; i < arrNum.length; i++) {
+        result += arrNum[i]
+    }
+    return result
+}
+
+
+
+
+// 26.- Crear la función 'multiplicarArray' que acepte como argumento un array numérico y devuelva
+// el resultado de la multiplicación de los elementos
+// Sumar array [1, 0, 2, 1, 0, 0, 1]
+// Sumar array [134, 53, 19, 67, 86]
+// Sumar array [6, 21, 27, 1, 7]
+// Sumar array [113, 149, 10, 32, 138]
+// Sumar array [45, 75, 12, 63, 10, 51]
+// Sumar array [6, 1, 7, 13, 10, 12, 9, 9]
+
+function multiplicarArray(arrNum) {
+    let result = 1
+    for (let i = 0; i < arrNum.length; i++) {
+        // result = result * arrNum[i]
+        result *= arrNum[i]
+    }
+    return result
+}
