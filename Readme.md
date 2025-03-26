@@ -78,3 +78,6 @@ En esta ocasión, el bikram se dividirá en :crossed_swords: Pair Programming :c
 - [ ] 25.- Crear la función **sumarArray** que acepte como argumento **un array numérico** y devuelva **la suma de los números en el array Array: [1, 2, 3] resultado: 6**
 
 - [ ] 26.- Crear la función **multiplicarArray** que acepte como argumento **un array numérico** y devuelva **la multiplicación de los números en el array Array:  [2, 3, 4] resultado: 24**
+
+--------------
+![Captura ejerciciso arrays y funciones resueltos](Captura_ejerciciso_arrays_y_funciones_resueltos.png "Captura ejerciciso arrays y funciones resueltos")
