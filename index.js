@@ -2,6 +2,8 @@
 //// Pair Programming ////
 //////////////////////////
 
+const dev1 = "Ainhoa Colorado 🦄"
+const dev2 = "Egoitz Aulestia 🚀"
 
 ////////////
 // Arrays //
@@ -114,6 +116,8 @@ function esPrimo(num) {
     return true;
 }
 
+
+
 //////////////////////////////////
 // Mezclando Arrays y Funciones //
 //////////////////////////////////
@@ -125,6 +129,7 @@ function esPrimo(num) {
 // Ordenar [157, 168, 152, 166, 160, 154, 164, 175, 179]
 // Ordenar []
 
+// // CUIDADO:
 // // Esta opción solo serviría para array de strings de palabras o letras
 // function ordenarArrayMAL(arrNum) {
 //     return arrNum.sort();
