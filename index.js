@@ -9,28 +9,28 @@
 
 // 1.- Crea una variable de nombre 'arrayVacio' cuyo valor sea un array vacio
 
-const arrayVacio = []
+const arrayVacio = [];
 
 
 // 2.- Crea una variable de nombre 'arrayNumeros' cuyo valor sea el array de numeros del 0 al 9 incluidos (0, 1, 2...)
 
-const arrayNumeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+const arrayNumeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 
 // 3.- Crea una variable de nombre 'arrayNumerosPares' cuyo valor sea el array de numeros pares del 0 al 9 (considerando al 0 par)
 
-const arrayNumerosPares = []
+const arrayNumerosPares = [];
 
 for (let i = 0; i < arrayNumeros.length; i++) {
     if ((i % 2) === 0) {
-        arrayNumerosPares.push(i)
+        arrayNumerosPares.push(i);
     }
 }
 
 
 // 4.- Crea una variable de nombre 'arrayBidimensional' cuyo valor sea el siguiente array [[0, 1, 2], ['a', 'b', 'c']]
 
-const arrayBidimensional = [[0, 1, 2], ['a', 'b', 'c']]
+const arrayBidimensional = [[0, 1, 2], ['a', 'b', 'c']];
 
 
 
@@ -46,14 +46,12 @@ const arrayBidimensional = [[0, 1, 2], ['a', 'b', 'c']]
 // suma(147, 70)
 
 function suma(a, b) {
-    if (typeof a !== "number" || typeof b !== "number") {
-        return "Error! Tienes que introducir un número de verdad";
-    }  
+    if ((typeof a !== "number") || (typeof b !== "number")) {
+        return "Error! Tienes que introducir números de verdad";
+    }    
 
-    return a + b
+    return a + b;
 }
-
-console.log(suma(1, 2))
 
 
 // 6.- Crea la función 'potenciacion' que acepte como argumentos dos números y devuelva 
@@ -65,11 +63,11 @@ console.log(suma(1, 2))
 // potenciacion(10, 3)
 
 function potenciacion(a, b) {
-    if (typeof a !== "number" || typeof b !== "number") {
-        return "Error! Tienes que introducir un número de verdad";
-    }  
+    if ((typeof a !== "number") || (typeof b !== "number")) {
+        return "Error! Tienes que introducir números de verdad";
+    }    
 
-    return a ** b
+    return a ** b;
 }
 
 
@@ -79,8 +77,7 @@ function potenciacion(a, b) {
 // A ver como separas esto
 
 function separarPalabras(text) {
-    return text.split(" ")
-
+    return text.split(" ");
 }
 
 
@@ -89,7 +86,7 @@ function separarPalabras(text) {
 // escribir estoy castigado 10 veces
 
 function repetirString(text, num) {
-    return text.repeat(num)
+    return text.repeat(num);
 }
 
 
@@ -105,16 +102,16 @@ function esPrimo(num) {
     }
 
     if (num <= 1) {
-        return false; // 0 and 1 are not prime
+        return false; // 0 y 1 no son números primos
     }
 
     for (let i = 2; i < num; i++) {
         if (num % i === 0) {
-            return false
+            return false;
         }
     }
 
-    return true
+    return true;
 }
 
 //////////////////////////////////
@@ -128,9 +125,20 @@ function esPrimo(num) {
 // Ordenar [157, 168, 152, 166, 160, 154, 164, 175, 179]
 // Ordenar []
 
+// // Esta opción solo serviría para array de strings de palabras o letras
+// function ordenarArrayMAL(arrNum) {
+//     return arrNum.sort();
+// }
+
+// console.log(ordenarArrayMAL([10, 5, 2, 100]));
+// // Resultado: [10, 100, 2, 5] <--- MAL !
+
 function ordenarArray(arrNum) {
-    return arrNum.sort()
+    return arrNum.sort((a, b) => a - b);
 }
+
+// console.log(ordenarArray([10, 5, 2, 100]));
+// // Resultado: [2, 5, 10, 100] <--- BIEN !
 
 
 // 11.- Crea la función 'obtenerPares' que acepte como argumento un array de números y devuelva 
@@ -142,13 +150,15 @@ function ordenarArray(arrNum) {
 // Pares en [0, 10, 9, 0]
 
 function obtenerPares(arrNum) {
-    const arrNumPar = []
+    const arrNumPar = [];
+
     for (let i = 0; i < arrNum.length; i++) {
         if ((arrNum[i] % 2) === 0) {
-            arrNumPar.push(arrNum[i])
+            arrNumPar.push(arrNum[i]);
         }
     }
-    return arrNumPar    
+
+    return arrNumPar; 
 } 
 
 
@@ -176,7 +186,7 @@ function pintarArray(arrNum) {
 // Array [0, 101, 47, 91, 21]
 
 function arrayMapi(arrNum, func) {
-    return arrNum.map(func)
+    return arrNum.map(func);
 }
 
 
@@ -188,19 +198,45 @@ function arrayMapi(arrNum, func) {
 // Eliminar duplicados de [20, 42, 53, 0, 0, 42, 53, 0, 20, 42, 53, 20]
 // Eliminar duplicados de [91, 1, 156, 91, 98, 1, 156, 91, 98, 1, 98, 156]
 
+// Opción A
 function eliminarDuplicados(arr) {
-    const result = []
+    // Validación: ¿es un array?
+    if (!Array.isArray(arr)) {
+        return "Error: Debes introducir un array.";
+    }
+
+    // Validación: ¿todos los elementos son números reales?
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] !== "number" || isNaN(arr[i])) {
+            return "Error: Todos los elementos deben ser números válidos.";
+        }
+    }
+
+    const result = [];
 
     for (let i = 0; i < arr.length; i++) {
         if (!result.includes(arr[i])) {
-            result.push(arr[i])
+            result.push(arr[i]);
         }
     }
 
     return result
 } 
 
+// Opción B
 function eliminarDuplicados2(arr) {
+    // Validación: ¿es un array?
+    if (!Array.isArray(arr)) {
+        return "Error: Debes introducir un array.";
+    }
+
+    // Validación: ¿todos los elementos son números reales?
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] !== "number" || isNaN(arr[i])) {
+            return "Error: Todos los elementos deben ser números válidos.";
+        }
+    }
+    
     const unique = [];
 
     for (let i = 0; i < arr.length; i++) {
@@ -212,8 +248,21 @@ function eliminarDuplicados2(arr) {
     return unique;
 }
 
+// Opción C
 function eliminarDuplicadosAdvance(arr) {
-    return arr.filter((item, index) => arr.indexOf(item) === index)
+    // Validación: ¿es un array?
+    if (!Array.isArray(arr)) {
+        return "Error: Debes introducir un array.";
+    }
+
+    // Validación: ¿todos los elementos son números reales?
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] !== "number" || isNaN(arr[i])) {
+            return "Error: Todos los elementos deben ser números válidos.";
+        }
+    }
+    
+    return arr.filter((item, index) => arr.indexOf(item) === index);
 }
 
 
@@ -228,22 +277,22 @@ function eliminarDuplicadosAdvance(arr) {
 
 // 15.- Crea una variable de nombre 'arrayNumerosNeg' cuyo valor sea el array de numeros del 0 al -9 incluidos (0, -1, -2...)
 
-const arrayNumerosNeg = [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
+const arrayNumerosNeg = [0, -1, -2, -3, -4, -5, -6, -7, -8, -9];
 
 
 // 16.- Crea una variable de nombre 'holaMundo' cuyo valor sea un array con las palabras 'Hola' y 'Mundo'
 
-const holaMundo = ["Hola", "Mundo"]
+const holaMundo = ["Hola", "Mundo"];
 
 
 // 17.- Crea una variable de nombre 'loGuardoTodo' cuyo valor sea un array con los valores 'hola', 'que', 23, 42.33 y 'tal'
 
-const loGuardoTodo = ["hola", "que", 23, 42.33, "tal"]
+const loGuardoTodo = ["hola", "que", 23, 42.33, "tal"];
 
 
 // 18.- Crea una variable de nombre 'arrayDeArrays' cuyo valor sea el siguiente array [[756, 'nombre'], [225, 'apellido'], [298, 'direccion']]
 
-const arrayDeArrays = [[756, 'nombre'], [225, 'apellido'], [298, 'direccion']]
+const arrayDeArrays = [[756, 'nombre'], [225, 'apellido'], [298, 'direccion']];
 
 
 
@@ -258,6 +307,106 @@ const arrayDeArrays = [[756, 'nombre'], [225, 'apellido'], [298, 'direccion']]
 // multiplicacion(175, 140)
 // multiplicacion(151, 115)
 
+function multiplicacion(a, b) {
+    if ((typeof a !== "number") || (typeof b !== "number")) {
+        return "Error! Tienes que introducir números de verdad";
+    }    
+
+    return a * b;
+}
+
+
+// 20.- Crea la función 'division' que acepte como argumentos dos números y devuelva como resultado su division
+// division(11, 137)
+// division(34, 88)
+// division(144, 194)
+// division(141, 6)
+// division(149, 147)
+
+// Opción A
+// function division(a, b) {
+//     return a / b;
+// }
+
+// Ocpción B
+function division(a, b) {
+    if ((typeof a !== "number") || (typeof b !== "number")) {
+        return "Error! Tienes que introducir números de verdad";
+    }  
+
+    return a / b;
+}
+
+
+// 21.- Crea la función 'esPar' que acepte como argumento un número y devuelva true si es par y false si es impar
+// esPar(91)
+// esPar(80)
+// esPar(160)
+// esPar(2)
+// esPar(28)
+
+
+function esPar(num) {
+    if (typeof num !== "number") {
+        return "Error! Tienes que introducir un número de verdad";
+    }  
+
+    if ((num % 2) === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+// 22.- Crea una variable de nombre 'arrayFunciones' que tenga el valor de un array con las funciones: suma, 
+// resta y multiplicacion (todas aceptan 2 números como argumento y devuelve el resultado de su operación)
+// Suma en posición 0
+// suma(173, 161)
+// suma(85, 22)
+// suma(120, 139)
+// suma(21, 67)
+// suma(109, 85)
+// Resta en posición 1
+// resta(140, 132)
+// resta(142, 32)
+// resta(166, 27)
+// resta(32, 168)
+// resta(116, 72)
+// Multiplicación en posición 2
+// multiplicación(58, 5)
+// multiplicación(30, 84)
+// multiplicación(146, 168)
+// multiplicación(151, 105)
+// multiplicación(155, 120)
+
+// // Opción A
+// let arrayFunciones = [
+//     // Función suma
+//     function (a, b) {
+//         return a + b;
+//     }, 
+//     // Función resta
+//     function (a, b) {
+//         return a - b;
+//     }, 
+//     // Función multiplicación
+//     function (a, b) {
+//         return a * b;
+//     }, 
+// ];
+
+// Opción B
+// Creamos la función resta, que nos falta en script para poder llamarlo desde el array "arrayFunciones"
+function resta(a, b) {
+    if ((typeof a !== "number") || (typeof b !== "number")) {
+        return "Error! Tienes que introducir números de verdad";
+    }  
+
+    return a - b;
+}
+
+const arrayFunciones = [suma, resta, multiplicacion];
 
 
 
@@ -273,7 +422,19 @@ const arrayDeArrays = [[756, 'nombre'], [225, 'apellido'], [298, 'direccion']]
 // Ordenar [196, 166, 138]
 
 function ordenarArray2(arrNum) { 
-    return arrNum.sort().reverse()
+    // Validación: ¿es un array?
+    if (!Array.isArray(arrNum)) {
+        return "Error: Debes introducir un array.";
+    }
+
+    // Validación: ¿todos los elementos son números reales?
+    for (let i = 0; i < arrNum.length; i++) {
+        if (typeof arrNum[i] !== "number" || isNaN(arrNum[i])) {
+            return "Error: Todos los elementos deben ser números válidos.";
+        }
+    }
+
+    return arrNum.sort((a, b) => a - b).reverse();
 }
 
 
@@ -285,15 +446,27 @@ function ordenarArray2(arrNum) {
 // Imares en [80, 44, 9, 69] 
 
 function obtenerImpares(arrNum) {
-    arrNumImpar = []
+    // Validación: ¿es un array?
+    if (!Array.isArray(arrNum)) {
+        return "Error: Debes introducir un array.";
+    }
 
+    // Validación: ¿todos los elementos son números reales?
     for (let i = 0; i < arrNum.length; i++) {
-        if ((arrNum[i] % 2) !== 0) {
-            arrNumImpar.push(arrNum[i])
+        if (typeof arrNum[i] !== "number" || isNaN(arrNum[i])) {
+            return "Error: Todos los elementos deben ser números válidos.";
         }
     }
 
-    return arrNumImpar
+    arrNumImpar = [];
+
+    for (let i = 0; i < arrNum.length; i++) {
+        if ((arrNum[i] % 2) !== 0) {
+            arrNumImpar.push(arrNum[i]);
+        }
+    }
+
+    return arrNumImpar;
 }
 
 
@@ -306,13 +479,25 @@ function obtenerImpares(arrNum) {
 // Sumar array [58, 63, 100, 154, 41, 4, 159, 42, 162]
 
 function sumarArray(arrNum) {
-    let result = 0
-
-    for (let i = 0; i < arrNum.length; i++) {
-        result += arrNum[i]
+    // Validación: ¿es un array?
+    if (!Array.isArray(arrNum)) {
+        return "Error: Debes introducir un array.";
     }
 
-    return result
+    // Validación: ¿todos los elementos son números reales?
+    for (let i = 0; i < arrNum.length; i++) {
+        if (typeof arrNum[i] !== "number" || isNaN(arrNum[i])) {
+            return "Error: Todos los elementos deben ser números válidos.";
+        }
+    }
+
+    let result = 0;
+
+    for (let i = 0; i < arrNum.length; i++) {
+        result += arrNum[i];
+    }
+
+    return result;
 }
 
 
@@ -326,11 +511,23 @@ function sumarArray(arrNum) {
 // Sumar array [6, 1, 7, 13, 10, 12, 9, 9]
 
 function multiplicarArray(arrNum) {
-    let result = 1
-
-    for (let i = 0; i < arrNum.length; i++) {
-        result *= arrNum[i]
+    // Validación: ¿es un array?
+    if (!Array.isArray(arrNum)) {
+        return "Error: Debes introducir un array.";
     }
 
-    return result
+    // Validación: ¿todos los elementos son números reales?
+    for (let i = 0; i < arrNum.length; i++) {
+        if (typeof arrNum[i] !== "number" || isNaN(arrNum[i])) {
+            return "Error: Todos los elementos deben ser números válidos.";
+        }
+    }
+    
+    let result = 1;
+
+    for (let i = 0; i < arrNum.length; i++) {
+        result *= arrNum[i];
+    }
+
+    return result;
 }
