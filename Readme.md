@@ -87,4 +87,4 @@ dev1 = Ainhoa Colorado 🦄
 
 dev2 = Egoitz Aulestia 🚀
 
-![Captura ejerciciso arrays y funciones resueltos](Captura_ejerciciso_arrays_y_funciones_resueltos.png "Captura ejerciciso arrays y funciones resueltos")
+![Captura ejerciciso arrays y funciones resueltos](Captura_ejerciciso_arrays_y_funciones_resueltos_final.png "Captura ejerciciso arrays y funciones resueltos")
