@@ -80,4 +80,12 @@ En esta ocasión, el bikram se dividirá en :crossed_swords: Pair Programming :c
 - [ ] 26.- Crear la función **multiplicarArray** que acepte como argumento **un array numérico** y devuelva **la multiplicación de los números en el array Array:  [2, 3, 4] resultado: 24**
 
 --------------
+
+//////////////////////////
+//// Pair Programming ////
+//////////////////////////
+
+const dev1 = "Ainhoa Colorado 🦄"
+const dev2 = "Egoitz Aulestia 🚀"
+
 ![Captura ejerciciso arrays y funciones resueltos](Captura_ejerciciso_arrays_y_funciones_resueltos.png "Captura ejerciciso arrays y funciones resueltos")
