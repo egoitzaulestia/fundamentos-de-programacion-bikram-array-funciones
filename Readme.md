@@ -81,12 +81,10 @@ En esta ocasión, el bikram se dividirá en :crossed_swords: Pair Programming :c
 
 --------------
 
-//////////////////////////
-//// Pair Programming ////
-//////////////////////////
+////////////////////////////// Pair Programming //////////////////////////////
 
-dev1 = "Ainhoa Colorado 🦄"
+dev1 = Ainhoa Colorado 🦄
 
-dev2 = "Egoitz Aulestia 🚀"
+dev2 = Egoitz Aulestia 🚀
 
 ![Captura ejerciciso arrays y funciones resueltos](Captura_ejerciciso_arrays_y_funciones_resueltos.png "Captura ejerciciso arrays y funciones resueltos")
